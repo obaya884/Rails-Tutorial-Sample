@@ -75,6 +75,10 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+  
+  # 静的なファイルをRailsから返す
+  config.public_file_server.enabled = true
+
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
