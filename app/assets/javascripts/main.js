@@ -1,7 +1,7 @@
-var app = angular.module('App', ['ngResource']);
+var app = angular.module('App', ['ngResource', 'templates']);
 
-app.component('testComponent', {
-    templateUrl: "button.html",
+app.component('testButton', {
+    templateUrl: 'testButton.html',
     bindings: {
         valueTest: '@'
     },
@@ -24,7 +24,7 @@ app.component('testComponent', {
 });
 
 app.component('homePage', {
-    templateUrl: "home_page.html",
+    templateUrl: 'homePage.html',
     bindings: {},
     controller: [
     '$scope',
@@ -57,7 +57,7 @@ app.component('homePage', {
 });
 
 app.component('userPage', {
-    templateUrl: "user_page.html",
+    templateUrl: 'userPage.html',
     bindings: {},
     controller: [
     '$scope',
@@ -72,6 +72,10 @@ app.component('userPage', {
             };
 
             // Event
+            ctrl.jumpToHomePage = function() {
+              PageService.status = 'home-page';
+            };
+
             ctrl.getQiita = function () {
                 var resource = QiitaResource.get();
 
