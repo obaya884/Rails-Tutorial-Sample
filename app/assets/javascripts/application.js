@@ -13,5 +13,10 @@
 //= require rails-ujs
 //= require jquery
 //= require bootstrap
+//= require angular
+//= require angular-animate
+//= require angular-resource
+//= require angular-rails-templates
 //= require turbolinks
+//= require_tree ./templates
 //= require_tree .

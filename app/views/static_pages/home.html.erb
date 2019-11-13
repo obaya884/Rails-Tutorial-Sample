@@ -1,5 +1,43 @@
-<% if logged_in? %>
-  <%= render 'static_pages/logged_in_home' %>
-<% else %>
-  <%= render 'static_pages/not_logged_in_home' %>
-<% end %>
+<!DOCTYPE html>
+<html∫ lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.4/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.7.4/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.4/angular-resource.js"></script>
+    <script src="main.js"></script>
+    <title>Document</title>
+</head>
+<body ng-app="App">
+    <home-page></home-page>
+    <user-page></user-page>
+</body>
+
+<script type="text/ng-template" id="button.html">
+    <div id="button">
+        <button ng-click="$ctrl.click()">test</button>
+        {{$ctrl.value}}  
+    </div>
+</script>
+
+<script type="text/ng-template" id="home_page.html">
+    <div id="home-page" ng-show="$ctrl.shown" >
+        <test-component value-test="valueTest!"></test-component>
+        <br />
+        <test-component value-test="hogefuga"></test-component>
+        <br />
+        <button ng-click="$ctrl.jumpToUserPage()">ユーザページへ</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="user_page.html">
+    <div id="user-page" ng-show="$ctrl.shown">
+            <p>わしがゆーざや。</p>
+            <br />
+            <button ng-click="$ctrl.getQiita()">get qiita</button>
+            <br />
+            <h1>{{$ctrl.title}}</h1>
+            <p>{{$ctrl.body}}</p>
+    </div>          
+</script>
+</html∫>
